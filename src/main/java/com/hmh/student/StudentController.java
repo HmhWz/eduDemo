@@ -12,5 +12,7 @@ public class StudentController {
     public String studentView(Model model){
         model.addAttribute("studentList",null);
         return "admin/college/student";
+
+
     }
 }
