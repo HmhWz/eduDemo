@@ -44,7 +44,7 @@
                             </label>
                         </div>
 
-                        <input type="submit" value="submit" class="btn btn-primary form-control">
+                        <input type="submit" value="登录" class="btn btn-primary form-control">
                     </fieldset>
                 </form>
             </div>

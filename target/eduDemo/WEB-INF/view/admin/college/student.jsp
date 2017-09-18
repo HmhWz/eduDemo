@@ -60,7 +60,7 @@
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <a href="${pageContext.request.contextPath}/student.do/student_add.view" class="btn btn-primary" role="button">添加学生</a>
+                            <a href="${pageContext.request.contextPath}/student.do/student_add.view" class="btn btn-primary">添加学生</a>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybaits.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmh.student.dao.StudentDao">
+   <!-- <resultMap id="student_map" type="Student">
+        <id property="id" column="id" />
+        <result property="studentId" column="student_id" />
+        <result property="studentName" column="student_name" />
+        <result property="gender" column="gender" />
+        <result property="grade" column="grade" />
+        <result property="department" column="department" />
+        <result property="className" column="class" />
+        <result property="originbase" column="originbase" />
+    </resultMap>-->
+
+    <insert id="add" parameterType="Student">
+        insert into student(student_id, student_name, gender, grade, department, class, originbase)
+        VALUES (#{studentId}, #{studentName}, #{gender}, #{grade}, #{department}, #{className}, #{originbase})
+    </insert>
+</mapper>
