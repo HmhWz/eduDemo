@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.hmh.student.dao.StudentDao">
-   <!-- <resultMap id="student_map" type="Student">
+    <resultMap id="student_map" type="Student">
         <id property="id" column="id" />
         <result property="studentId" column="student_id" />
         <result property="studentName" column="student_name" />
@@ -13,10 +13,25 @@
         <result property="department" column="department" />
         <result property="className" column="class" />
         <result property="originbase" column="originbase" />
-    </resultMap>-->
+    </resultMap>
 
     <insert id="add" parameterType="Student">
         insert into student(student_id, student_name, gender, grade, department, class, originbase)
         VALUES (#{studentId}, #{studentName}, #{gender}, #{grade}, #{department}, #{className}, #{originbase})
     </insert>
+
+    <update id="update" parameterType="Student">
+        update student set student_id=#{studentId}, student_name=#{studentName}, gender=#{gender},
+        grade=#{grade}, department=#{department}, class=#{className}, originbase=#{originbase}
+        where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from student where id=#{id}
+    </delete>
+
+    <select id="studentList" resultMap="student_map">
+        select * from student
+    </select>
+
 </mapper>

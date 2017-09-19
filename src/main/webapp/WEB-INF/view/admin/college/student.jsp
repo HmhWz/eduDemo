@@ -43,17 +43,16 @@
                                     <tr>
                                         <td>${student.studentId}</td>
                                         <td>${student.studentName}</td>
-                                        <td>${student.idCard}</td>
                                         <td>${student.gender}</td>
-                                        <td>${student.telephoneNumber}</td>
-                                        <td>${student.className}</td>
                                         <td>${student.grade}</td>
-                                        <td>${student.originBased}</td>
+                                        <td>${student.department}</td>
+                                        <td>${student.className}</td>
+                                        <td>${student.originbase}</td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/student.do/student_update.view?studentId=${student.studentId}">修改</a>
+                                            <a href="${pageContext.request.contextPath}/student.do/student_update.view?id=${student.id}">修改</a>
                                         </td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/student.do/delete?studentId=${student.studentId}"
+                                            <a href="${pageContext.request.contextPath}/student.do/delete?id=${student.id}"
                                                onclick="return confirm('是否删除此学生信息')">删除</a>
                                         </td>
                                     </tr>

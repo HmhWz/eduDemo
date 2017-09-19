@@ -6,6 +6,7 @@ import com.hmh.student.service.StudentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService{
@@ -14,5 +15,17 @@ public class StudentServiceImpl implements StudentService{
 
     public void add(Student student) {
         studentDao.add(student);
+    }
+
+    public void update(Student student) {
+        studentDao.update(student);
+    }
+
+    public void delete(int id) {
+        studentDao.delete(id);
+    }
+
+    public List<Student> studentList(){
+        return studentDao.studentList();
     }
 }

@@ -1,6 +1,7 @@
 package com.hmh.entity;
 
 public class Student {
+    private int id;
     private String studentId;
     private String studentName;
     private String gender;
@@ -8,6 +9,14 @@ public class Student {
     private String department;
     private String className;
     private String originbase;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public void setStudentId(String studentId) {
         this.studentId = studentId;
