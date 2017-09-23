@@ -1,55 +1,32 @@
 package com.hmh.student.controller;
 
-import com.hmh.entity.Student;
 import com.hmh.student.service.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 
 @Controller
-@RequestMapping("student.do")
+@RequestMapping("student")
 public class StudentController {
 
     @Resource(name = "studentServiceImpl")
     StudentService studentService;
 
-    @RequestMapping("student.view")
-    public String studentView(Model model){
-        model.addAttribute("studentList",studentService.studentList());
-        return "admin/college/student";
+    @RequestMapping(value = "main")
+    public String mainInfo(Model model, int studentId) {
+        model.addAttribute("student", studentService.findByStudentId(studentId));
+        return "student/main";
     }
 
-    @RequestMapping(value = "student_add.view", method = RequestMethod.GET)
-    public String addView() {
-        return "admin/college/student_add";
+    @RequestMapping(value = "mycourse")
+    public String myCourse() {
+        return "student/mycourse";
     }
 
-    @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(ModelMap modelMap, Student student) {
-        studentService.add(student);
-        return "redirect:/student.do/student.view";
+    @RequestMapping(value = "elect")
+    public String electCourse() {
+        return "student/elect";
     }
-
-    @RequestMapping("student_update.view")
-    public String updateView(){
-        return "admin/college/student_update";
-    }
-
-    @RequestMapping(value = "update", method = RequestMethod.POST)
-    public String update(ModelMap model, Student student){
-        model.addAttribute("studentId", student.getStudentId());
-        studentService.update(student);
-        return "redirect:/student.do/student.view";
-    }
-
-    @RequestMapping("delete")
-    public String delete(Model model, int id){
-        studentService.delete(id);
-        return "redirect:/student.do/student.view";
-    }
-
 }

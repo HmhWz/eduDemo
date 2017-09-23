@@ -30,6 +30,10 @@
         delete from student where id=#{id}
     </delete>
 
+    <select id="findByStudentId" parameterType="int">
+        select * from student where student_id=#{studentId}
+    </select>
+
     <select id="studentList" resultMap="student_map">
         select * from student
     </select>

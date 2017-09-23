@@ -17,4 +17,6 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="5242880"/>
     </bean>
+
+    <import resource="classpath:spring-mvc-shiro.xml" />
 </beans>

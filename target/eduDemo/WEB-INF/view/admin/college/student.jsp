@@ -28,14 +28,11 @@
                                 <tr>
                                     <th>学号</th>
                                     <th>姓名</th>
-                                    <th>身份证号</th>
                                     <th>性别</th>
-                                    <th>电话号码</th>
-                                    <th>班级</th>
                                     <th>年级</th>
+                                    <th>院系</th>
+                                    <th>班级</th>
                                     <th>生源地</th>
-                                    <th></th>
-                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>

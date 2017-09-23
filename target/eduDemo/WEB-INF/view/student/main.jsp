@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: hmh
-  Date: 17-9-17
-  Time: 下午2:09
+  Date: 17-9-20
+  Time: 下午1:16
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,19 +11,30 @@
 
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div>
-            <h1 class="page-header">管理页面</h1>
-        </div>
         <div class="panel-heading">
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        后台管理页面
+                        我的信息
                     </div>
                     <div class="panel-body">
                         <div class="dataTables_wrapper">
+                            <table class="table table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>学号</th>
+                                    <th>姓名</th>
+                                    <th>性别</th>
+                                    <th>年级</th>
+                                    <th>院系</th>
+                                    <th>班级</th>
+                                    <th>出生地</th>
+                                </tr>
+                                </thead>
+
+                            </table>
                         </div>
                     </div>
                 </div>

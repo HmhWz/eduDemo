@@ -25,6 +25,10 @@ public class StudentServiceImpl implements StudentService{
         studentDao.delete(id);
     }
 
+    public Student findByStudentId(int studentId) {
+        return studentDao.findByStudentId(studentId);
+    }
+
     public List<Student> studentList(){
         return studentDao.studentList();
     }
