@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybaits.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmh.clazz.dao.ClazzMapper">
+    <resultMap id="clazz_map" type="Clazz">
+        <id property="id" column="id" />
+        <result property="clazzName" column="class_name" />
+        <result property="specName" column="spec_name" />
+    </resultMap>
+
+    <select id="clazzList" resultMap="clazz_map">
+        select * from class
+    </select>
+
+    <insert id="add" parameterType="Clazz">
+        insert into class(class_name, spec_name) values (#{clazzName}, #{specName})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from class where id=#{id}
+    </delete>
+
+</mapper>

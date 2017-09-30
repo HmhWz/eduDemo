@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybaits.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmh.speciality.dao.SpecialityMapper">
+    <resultMap id="spec_map" type="Speciality">
+        <id property="id" column="id" />
+        <result property="specialityName" column="speciality_name" />
+        <result property="deptName" column="dept_name" />
+    </resultMap>
+
+    <select id="specList" resultMap="spec_map">
+        select * from speciality
+    </select>
+
+    <select id="findByDeptName" resultMap="spec_map" parameterType="String">
+        select * from speciality where dept_name=#{deptName}
+    </select>
+
+    <insert id="add" parameterType="Speciality">
+        insert into speciality(speciality_name, dept_name) values (#{specialityName}, #{deptName})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from speciality where id=#{id}
+    </delete>
+</mapper>

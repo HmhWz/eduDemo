@@ -22,7 +22,7 @@
                         <div class="dataTables_wrapper">
                             <form action="${pageContext.request.contextPath}/student.do/add" method="post">
                                 <label>学号</label>
-                                <input class="form-control" name="studentId" />
+                                <input class="form-control" name="studentId" autofocus/>
                                 <label>密码</label>
                                 <input class="form-control" name="password" />
                                 <label>姓名</label>

@@ -1,7 +1,5 @@
 package com.hmh.entity;
 
-import java.util.List;
-
 public class Role {
 
     private int id;
@@ -50,4 +48,6 @@ public class Role {
     public void setAvailable(Boolean available) {
         this.available = available;
     }
+
+
 }

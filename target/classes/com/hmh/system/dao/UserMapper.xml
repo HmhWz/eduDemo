@@ -4,13 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.hmh.system.dao.UserMapper">
-    <select id="findByUsername" parameterType="String">
+
+    <resultMap id="user_map" type="User">
+        <id property="id" column="id" />
+        <result property="username" column="user_name" />
+        <result property="password" column="password" />
+        <result property="salt" column="salt" />
+        <result property="roleIdsStr" column="role_ids" />
+    </resultMap>
+
+    <select id="findByUsername" parameterType="String" resultMap="user_map">
         select * from user where user_name=#{username}
+    </select>
+
+    <select id="userList" resultMap="user_map">
+        select * from user where user_name!='admin'
     </select>
 
     <insert id="add" parameterType="User">
         insert into user(user_name, password, salt, role_ids, locked)
-        values(#{username}, #{password}, #{salt}, #{role_ids}, #{locked})
+        values(#{username}, #{password}, #{salt}, #{roleIdsStr}, #{locked})
     </insert>
 
     <delete id="delete" parameterType="String">

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybaits.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmh.course_arrange.dao.CourseArrangeMapper">
+    <resultMap id="course_arrange_map" type="CourseArrange">
+        <id property="id" column="id" />
+        <result property="courseName" column="course_name" />
+        <result property="teacherName" column="teacher_name" />
+        <result property="limitCount" column="limitCount" />
+    </resultMap>
+
+    <select id="courseArrangedList" resultMap="course_arrange_map">
+        select * from course_arrange
+    </select>
+
+    <insert id="add" parameterType="CourseArrange">
+        insert into course_arrange(course_name, teacher_name, limitCount)
+        values(#{courseName}, #{teacherName}, #{limitCount})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from course_arrange where id=#{id}
+    </delete>
+</mapper>

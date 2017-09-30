@@ -68,40 +68,32 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="#">
-                            <i class="fa fa-book fa-fw"></i>控制面板
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
+                        <a href="${pageContext.request.contextPath}/user.do/user.view">
                             <i class="fa fa-book fa-fw"></i>用户管理
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="${pageContext.request.contextPath}/role.do/role.view">
                             <i class="fa fa-book fa-fw"></i>角色管理
                         </a>
                     </li>
 
                     <li>
                         <a href="#">
-                            <i class="fa fa-wrench fa-fw"></i>学院管理<span class="fa arrow"></span>
+                            <i class="fa fa-wrench fa-fw"></i> 教务管理<span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">整体概况</a>
+                                <a href="${pageContext.request.contextPath}/dept.do/dept.view">系部设置</a>
                             </li>
                             <li>
-                                <a href="${pageContext.request.contextPath}/department.do/department.view">系部设置</a>
+                                <a href="${pageContext.request.contextPath}/spec.do/spec.view">专业设置</a>
                             </li>
                             <li>
-                                <a href="${pageContext.request.contextPath}/speciality.do/speciality.view">专业设置</a>
+                                <a href="${pageContext.request.contextPath}/clazz.do/clazz.view">班级设置</a>
                             </li>
                             <li>
-                                <a href="${pageContext.request.contextPath}/class.do/class.view">班级设置</a>
-                            </li>
-                            <li>
-                                <a href="${pageContext.request.contextPath}/add_course.do/add_course.view">添加课程</a>
+                                <a href="${pageContext.request.contextPath}/course.do/course.view">课程设置</a>
                             </li>
                             <li>
                                 <a href="${pageContext.request.contextPath}/course_arrange.do/course_arrange.view">课程安排</a>

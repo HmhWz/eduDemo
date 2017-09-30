@@ -1,17 +1,14 @@
 package com.hmh.entity;
 
-import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    String id;
-    String username;
-    String password;
-    String salt;
-    private List<Long> roleIds; //拥有的角色列表
+    private int id;
+    private String username;
+    private String password;
+    private String salt;
+    private List<Integer> roleIds; //拥有的角色列表
     private Boolean locked = false;
 
     public void setUsername(String username) {
@@ -22,11 +19,11 @@ public class User {
         return username;
     }
 
-    public void setUserId(String userId) {
-        this.id = userId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getUserId() {
+    public int getId() {
         return id;
     }
 
@@ -46,11 +43,11 @@ public class User {
         return locked;
     }
 
-    public void setRoleIds(List<Long> roleIds) {
+    public void setRoleIds(List<Integer> roleIds) {
         this.roleIds = roleIds;
     }
 
-    public List<Long> getRoleIds() {
+    public List<Integer> getRoleIds() {
         return roleIds;
     }
 
@@ -68,27 +65,27 @@ public class User {
 
 //    得到角色列表的字符串
     public String getRoleIdsStr() {
-        if (CollectionUtils.isEmpty(roleIds)){
+        if(roleIds.isEmpty()){
             return "";
         }
-        StringBuilder s = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         int i = 0;
-        for(; i < roleIds.size() -1; i++){
-            s.append(roleIds.get(i));
-            s.append(",");
+        for(; i < roleIds.size() - 1; i++){
+            stringBuilder.append(roleIds.get(i));
+            stringBuilder.append(",");
         }
-        s.append(roleIds.get(i));
-        return s.toString();
+        stringBuilder.append(roleIds.get(i));
+        return stringBuilder.toString();
     }
 
     public void setRoleIdsStr(String roleIdsStr){
-        if(StringUtils.isEmpty(roleIdsStr)){
+        if(roleIdsStr == null || roleIdsStr == ""){
             return;
         }
-        roleIds = new ArrayList<Long>();
+        roleIds = new ArrayList<>();
         String[] strArr = roleIdsStr.split(",");
         for(String str : strArr){
-            roleIds.add(Long.valueOf(str));
+            roleIds.add(Integer.valueOf(str));
         }
     }
 }

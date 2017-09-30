@@ -29,7 +29,9 @@
 
     <!--扫描mapper-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.hmh"/>
+        <property name="basePackage" value="com.hmh" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
+
+    <import resource="spring-shiro.xml" />
 </beans>

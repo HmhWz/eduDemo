@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hmh.department.dao.DepartmentMapper">
+
+    <resultMap id="dept_map" type="Department">
+        <id property="id" column="id" />
+        <result property="departmentName" column="department_name" />
+    </resultMap>
+
+    <select id="departmentList" resultMap="dept_map">
+        select * from department
+    </select>
+
+    <insert id="add" parameterType="Department">
+        insert into department(department_name) values (#{departmentName})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from department where id=#{id}
+    </delete>
+</mapper>
