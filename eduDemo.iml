@@ -44,6 +44,7 @@
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-spring:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-aspectj:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.44" level="project" />
+    <orderEntry type="library" name="Maven: org.mariadb.jdbc:mariadb-java-client:2.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.10" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:4.3.10.RELEASE" level="project" />

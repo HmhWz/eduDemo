@@ -30,7 +30,7 @@
                                 <input class="form-control" name="username">
                                 <label>密码</label>
                                 <input class="form-control" name="password">
-                                <label>角色列表(按住shift键多选)</label>
+                                <label>角色列表(按住ctrl键多选)</label>
                                 <select multiple="true" class="form-control" name="roleIds">
                                     <c:forEach var="role" items="${roleList}">
                                         <option value="${role.id}">${role.description}</option>

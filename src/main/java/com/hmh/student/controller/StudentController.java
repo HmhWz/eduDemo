@@ -15,8 +15,8 @@ public class StudentController {
     StudentService studentService;
 
     @RequestMapping(value = "main")
-    public String mainInfo(Model model, int studentId) {
-        model.addAttribute("student", studentService.findByStudentId(studentId));
+    public String mainInfo(Model model) {
+//        model.addAttribute("student", studentService.findByStudentId(studentId));
         return "student/main";
     }
 

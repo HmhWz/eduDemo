@@ -1,5 +1,6 @@
 package com.hmh.student.controller;
 
+import com.hmh.department.service.DepartmentService;
 import com.hmh.entity.Student;
 import com.hmh.student.service.StudentService;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,8 @@ public class AdminStudentController {
 
     @Resource(name = "studentServiceImpl")
     StudentService studentService;
+    @Resource(name = "departmentServiceImpl")
+    DepartmentService departmentService;
 
     @RequestMapping("student.view")
     public String studentView(Model model){
@@ -24,7 +27,8 @@ public class AdminStudentController {
     }
 
     @RequestMapping(value = "student_add.view", method = RequestMethod.GET)
-    public String addView() {
+    public String addView(Model model) {
+        model.addAttribute("deptList", departmentService.departmentList());
         return "admin/college/student_add";
     }
 
@@ -35,7 +39,8 @@ public class AdminStudentController {
     }
 
     @RequestMapping("student_update.view")
-    public String updateView(){
+    public String updateView(Model model){
+        model.addAttribute("deptList", departmentService.departmentList());
         return "admin/college/student_update";
     }
 

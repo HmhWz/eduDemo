@@ -41,7 +41,11 @@
                                 <label>年级</label>
                                 <input class="form-control" name="grade" />
                                 <label>院系</label>
-                                <input class="form-control" name="department" />
+                                <select class="form-control" name="department">
+                                    <c:forEach items="${deptList}" var="dept">
+                                        <option>${dept.departmentName}</option>
+                                    </c:forEach>
+                                </select>
                                 <label>班级</label>
                                 <input class="form-control" name="className" />
                                 <label>生源地</label>
