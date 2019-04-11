@@ -1,6 +1,12 @@
 <component name="ArtifactManager">
-  <artifact type="war" build-on-make="true" name="eduDemo:war">
+  <artifact type="war" name="eduDemo:war">
     <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>eduDemo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="archive" name="eduDemo.war">
       <element id="artifact" artifact-name="eduDemo:war exploded" />
     </root>

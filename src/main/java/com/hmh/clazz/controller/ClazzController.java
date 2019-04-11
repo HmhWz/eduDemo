@@ -13,33 +13,34 @@ import javax.annotation.Resource;
 @Controller
 @RequestMapping("clazz.do")
 public class ClazzController {
-    @Resource(name = "clazzServiceImpl")
-    ClazzService clazzService;
 
-    @Resource(name = "departmentServiceImpl")
-    DepartmentService departmentService;
+	@Resource(name = "clazzServiceImpl")
+	ClazzService clazzService;
 
-    @RequestMapping("clazz.view")
-    public String clazzView(Model model) {
-        model.addAttribute("clazzList", clazzService.clazzList());
-        return "admin/college/class";
-    }
+	@Resource(name = "departmentServiceImpl")
+	DepartmentService departmentService;
 
-    @RequestMapping("clazz_add.view")
-    public String addView(Model model){
-        model.addAttribute("deptList", departmentService.departmentList());
-        return "admin/college/class_add";
-    }
+	@RequestMapping("clazz.view")
+	public String clazzView(Model model) {
+		model.addAttribute("clazzList", clazzService.clazzList());
+		return "admin/college/class";
+	}
 
-    @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(Clazz clazz){
-        clazzService.add(clazz);
-        return "redirect: clazz.view";
-    }
+	@RequestMapping("clazz_add.view")
+	public String addView(Model model) {
+		model.addAttribute("deptList", departmentService.departmentList());
+		return "admin/college/class_add";
+	}
 
-    @RequestMapping("delete")
-    public String delete(int id){
-        clazzService.delete(id);
-        return "redirect: clazz.view";
-    }
+	@RequestMapping(value = "add", method = RequestMethod.POST)
+	public String add(Clazz clazz) {
+		clazzService.add(clazz);
+		return "redirect: clazz.view";
+	}
+
+	@RequestMapping("delete")
+	public String delete(int id) {
+		clazzService.delete(id);
+		return "redirect: clazz.view";
+	}
 }

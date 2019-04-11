@@ -5,15 +5,22 @@ import com.hmh.entity.Course;
 import com.hmh.speciality.service.SpecialityService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.HandlerAdapter;
+import org.springframework.web.servlet.HandlerExecutionChain;
+import org.springframework.web.servlet.HandlerMapping;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.annotation.Resource;
+import java.util.UUID;
+
 
 @Controller
 @RequestMapping("course.do")
 public class CourseController {
-
     @Resource(name = "courseServiceImpl")
     CourseService courseService;
 

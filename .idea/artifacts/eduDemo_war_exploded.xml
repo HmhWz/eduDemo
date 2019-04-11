@@ -1,6 +1,13 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="eduDemo:war exploded">
     <output-path>$PROJECT_DIR$/target/eduDemo</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>eduDemo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -23,7 +30,8 @@
           <element id="library" level="project" name="Maven: org.opensymphony.quartz:quartz:1.6.1" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-spring:1.4.0" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-aspectj:1.4.0" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.44" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.11" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:2.6.0" />
           <element id="library" level="project" name="Maven: org.mariadb.jdbc:mariadb-java-client:2.1.2" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.10" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.10" />

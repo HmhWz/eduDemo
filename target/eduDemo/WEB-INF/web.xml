@@ -82,5 +82,5 @@
     <!--welcome file-->
     <welcome-file-list>
         <welcome-file>/WEB-INF/view/login.jsp</welcome-file>
-    </welcome-file-list>
+</welcome-file-list>
 </web-app>
